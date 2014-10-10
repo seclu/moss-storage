@@ -21,7 +21,7 @@ use Moss\Storage\Driver\DriverInterface;
  * @author  Grzegorz Imiolek <grzegorz.imiolek@gmail.com>
  * @package Moss\Storage
  */
-class PgSQLSerializableTransactionStorage extends StorageQuery
+class PgSQLSerializableTransaction extends StorageQuery
 {
     /**
      * Current transaction id

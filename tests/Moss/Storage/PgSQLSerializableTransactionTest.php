@@ -11,11 +11,11 @@
 
 namespace Moss\Storage;
 
-class PgSQLSerializableTransactionStorageTest extends \PHPUnit_Framework_TestCase
+class PgSQLSerializableTransactionTest extends \PHPUnit_Framework_TestCase
 {
     public function testTransactionStart()
     {
-        $storage = new PgSQLSerializableTransactionStorage($this->mockDriver());
+        $storage = new PgSQLSerializableTransaction($this->mockDriver(), $this->mockBuilder());
         $this->assertInstanceOf('Moss\Storage\Driver\DriverInterface', $storage->getDriver());
         $this->assertTrue($storage->transactionCheck());
     }
@@ -23,6 +23,13 @@ class PgSQLSerializableTransactionStorageTest extends \PHPUnit_Framework_TestCas
     protected function mockDriver()
     {
         $mock = $this->getMock('Moss\Storage\Driver\DriverInterface');
+        return $mock;
+    }
+
+    protected function mockBuilder()
+    {
+        $mock = $this->getMock('Moss\Storage\Builder\QueryBuilderInterface');
+
         return $mock;
     }
 } 
