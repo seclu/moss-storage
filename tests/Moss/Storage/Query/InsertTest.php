@@ -19,7 +19,7 @@ class InsertTest extends \PHPUnit_Framework_TestCase
     {
         $this->entity = new \stdClass();
         $this->entity->id = 1;
-        $this->entity->text = 'foo bar';
+        $this->entity->text = 'foobar';
 
         $this->insertObject = new Insert($this->mockDriver(), $this->mockBuilder(), $this->mockModelBag());
     }
